@@ -1,21 +1,49 @@
 <template>
   <div>
-    <h1>Belajar Looping Dengan Component</h1>
-    <my-title v-for="num in numbers" :key="num" :title="num" />
+    <h1>Lifecycle</h1>
   </div>
 </template>
 
 <script>
-import MyTitle from "./components/MyTitle.vue";
-
 export default {
-  components: {
-    MyTitle,
+  // dijalankna ketika component sblm di buat (blm di tempel)
+  beforeCreate() {
+    console.log("beforeCreate");
   },
-  data() {
-    return {
-      numbers: [1, 2, 3],
-    };
+
+  // di jalankan ketika component sudah di buat (blm di tempel)
+  created() {
+    console.log("created");
+  },
+
+  // dijalankan sebelm component di tempel (setelah component di buat)
+  beforeMount() {
+    console.log("beforeMount");
+  },
+
+  // dijalankan sesudah component di tempel (setelah component di buat)
+  mounted() {
+    console.log("mounted");
+  },
+
+  // di jalankan sebelum ketika ada perubahan data dan props
+  beforeUpdate() {
+    console.log("beforeUpdate");
+  },
+
+  // di jalankan ketika ada perubahan data dan props
+  updated() {
+    console.log("updated");
+  },
+
+  //  dijakankan sebelum component di hapus
+  beforeUnmount() {
+    console.log("beforeUnmount");
+  },
+
+  // di jalankan ketika component sudah di hapus
+  unmounted() {
+    console.log("unmounted");
   },
 };
 </script>
